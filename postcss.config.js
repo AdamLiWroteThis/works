@@ -5,7 +5,7 @@ module.exports = {
     },
     "postcss-px-to-viewport": {
       unitToConvert: "px",
-      viewportWidth: 1920,
+      viewportWidth: 1440,
       unitPrecision: 5,
       propList: ["*"],
       viewportUnit: "vw",
@@ -17,7 +17,7 @@ module.exports = {
       exclude: [],
       landscape: false, // 是否处理横屏情况
       landscapeUnit: "vw",
-      landscapeWidth: 1920, // 横屏时使用的视口宽度
+      landscapeWidth: 1440, // 横屏时使用的视口宽度
     },
   },
 };
