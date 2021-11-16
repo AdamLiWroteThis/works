@@ -1,25 +1,26 @@
 <template>
   <div class="works">
-    <Work v-for="work in works" :key="work" />
+    <WorkCell v-for="work in works" :key="work" :title="work.title" />
   </div>
 </template>
 
 <script>
-import Work from "@/components/Work.vue";
+import WorkCell from "@/components/WorkCell.vue";
 export default {
   name: "Works",
   components: {
-    Work,
+    WorkCell,
   },
   data() {
-    return { works: 45 };
+    return { works: [{ title: "快闪切换" }] };
   },
 };
 </script>
 
 <style scoped lang="less">
 .works {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 2px;
 }
 </style>
