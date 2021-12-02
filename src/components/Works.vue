@@ -12,7 +12,7 @@ export default {
     WorkCell,
   },
   data() {
-    return { works: [{ title: "快闪切换" }] };
+    return { works: [{ title: "移动端电子图书商城" }] };
   },
 };
 </script>

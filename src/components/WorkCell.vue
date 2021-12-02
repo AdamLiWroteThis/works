@@ -1,5 +1,5 @@
 <template>
-  <div class="work">
+  <div class="work" @click="handleGoToDetails">
     <div class="title">
       <span>{{ title }}</span>
     </div>
@@ -16,6 +16,11 @@ export default {
     return {
       name: "Work",
     };
+  },
+  methods: {
+    handleGoToDetails() {
+      this.$router.push("/details");
+    },
   },
 };
 </script>
