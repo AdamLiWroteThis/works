@@ -1,6 +1,18 @@
+<!--
+ * @Description: chinasoft.inc
+ * @Version: 0.1
+ * @Author: lijun
+ * @LastEditors: lijun
+ * Copyright (C) 2022 lshm. All rights reserved.
+-->
 <template>
   <div class="works">
-    <WorkCell v-for="work in works" :key="work" :title="work.title" />
+    <WorkCell
+      v-for="(aWork, workIndex) in works"
+      :key="workIndex"
+      :title="aWork.title"
+      :work-data="aWork"
+    />
   </div>
 </template>
 
@@ -12,7 +24,19 @@ export default {
     WorkCell,
   },
   data() {
-    return { works: [{ title: "移动端电子图书商城" }] };
+    return {
+      works: [
+        { title: "移动端电子图书商城" },
+        {
+          title: "渐变背景登录页",
+          route: {
+            name: "login_1",
+            path: "/login_1",
+            component: () => import("@/components/login_1.vue"),
+          },
+        },
+      ],
+    };
   },
 };
 </script>

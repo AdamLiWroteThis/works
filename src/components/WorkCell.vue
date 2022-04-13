@@ -1,3 +1,10 @@
+<!--
+ * @Description: chinasoft.inc
+ * @Version: 0.1
+ * @Author: lijun
+ * @LastEditors: lijun
+ * Copyright (C) 2022 lshm. All rights reserved.
+-->
 <template>
   <div class="work" @click="handleGoToDetails">
     <div class="title">
@@ -11,6 +18,7 @@ export default {
   name: "Work",
   props: {
     title: String,
+    workData: Object,
   },
   data() {
     return {
@@ -19,8 +27,12 @@ export default {
   },
   methods: {
     handleGoToDetails() {
-      this.$router.push("/details");
+      if (!this.workData.route) this.$router.push("/details");
+      this.$router.push(this.workData.route.path);
     },
+  },
+  mounted() {
+    if (this.workData.route) this.$router.addRoute(this.workData.route);
   },
 };
 </script>
